@@ -1,7 +1,8 @@
-import 'package:capstone_dicoding/pages/details/detailscreen.dart';
+import 'package:capstone_dicoding/pages/splash/splashscreen.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+Future<void> main() async{
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(MyApp());
 }
 
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,
       ),
-      home: DetailScreen(),
+      home: SplashScreen(),
     );
   }
 }
