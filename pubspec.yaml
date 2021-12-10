@@ -15,6 +15,8 @@ dependencies:
   after_layout: ^1.1.0
   cupertino_icons: ^1.0.2
   concentric_transition: ^1.0.1
+  sliding_up_panel: ^2.0.0+1
+  shimmer: ^2.0.0
 
 dev_dependencies:
   flutter_test:

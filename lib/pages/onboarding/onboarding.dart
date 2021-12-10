@@ -1,5 +1,5 @@
 import 'package:capstone_dicoding/mediaquery/sizeconfig.dart';
-import 'package:capstone_dicoding/pages/details/detailscreen.dart';
+import 'package:capstone_dicoding/pages/home/home.dart';
 import 'package:capstone_dicoding/pages/onboarding/slider.dart';
 import 'package:flutter/material.dart';
 
@@ -108,7 +108,7 @@ class _OnBoardState extends State<OnBoard> {
                         onTap: () {
                           Navigator.pushReplacement(context,
                               MaterialPageRoute(builder: (context) {
-                            return DetailScreen();
+                            return HomeScreen();
                           }));
                         },
                         child: Hero(

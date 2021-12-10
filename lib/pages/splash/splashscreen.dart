@@ -1,7 +1,7 @@
+import 'package:capstone_dicoding/pages/home/home.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:after_layout/after_layout.dart';
-import 'package:capstone_dicoding/pages/details/detailscreen.dart';
 import 'package:capstone_dicoding/pages/onboarding/onboarding.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -32,7 +32,7 @@ class _SplashScreenState extends State<SplashScreen>
     if (_seen) {
       Timer(Duration(seconds: 4), () {
         Navigator.of(context)
-          .pushReplacement(MaterialPageRoute(builder: (context) => DetailScreen()));
+          .pushReplacement(MaterialPageRoute(builder: (context) => HomeScreen()));
       });
     } else {
       await prefs.setBool('seen', true);
