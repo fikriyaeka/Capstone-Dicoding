@@ -17,6 +17,7 @@ dependencies:
   concentric_transition: ^1.0.1
   sliding_up_panel: ^2.0.0+1
   shimmer: ^2.0.0
+  animated_text_kit: ^4.2.1
 
 dev_dependencies:
   flutter_test:

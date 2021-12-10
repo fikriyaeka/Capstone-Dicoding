@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:capstone_dicoding/mediaquery/sizeconfig.dart';
 import 'package:capstone_dicoding/pages/home/home.dart';
 import 'package:capstone_dicoding/pages/onboarding/slider.dart';
@@ -46,14 +47,22 @@ class _OnBoardState extends State<OnBoard> {
                 height: responsiveHeight(50),
               ),
               Center(
-                child: Text(
-                  "INLINE",
-                  style: TextStyle(
+                  child: AnimatedTextKit(
+                animatedTexts: [
+                  TypewriterAnimatedText(
+                    'INLINE',
+                    textStyle: const TextStyle(
+                      fontSize: 32.0,
                       color: Color(0xFFB983FF),
-                      fontSize: 36,
-                      fontWeight: FontWeight.bold),
-                ),
-              ),
+                      fontWeight: FontWeight.bold,
+                    ),
+                    speed: const Duration(milliseconds: 1000),
+                  ),
+                ],
+                totalRepeatCount: 1,
+                displayFullTextOnTap: true,
+                stopPauseOnTap: true,
+              )),
             ],
           ),
           PageView.builder(
