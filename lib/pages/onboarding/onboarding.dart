@@ -13,21 +13,21 @@ class _OnBoardState extends State<OnBoard> {
   PageController _controller = PageController();
   List<Widget> pages = [
     SliderPage(
-      title: "Lorem Ipsum",
+      title: "Let's Invest",
       description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quam sed ipsum ornare",
-      imageAsset: "assets/img/onboard1.png",
-    ),
-    SliderPage(
-      title: "Lorem Ipsum",
-      description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quam sed ipsum ornare",
+          "Start investing now to get a lot of benefits, which are must-haves if you want to be successful in your financial life.",
       imageAsset: "assets/img/onboard2.png",
     ),
     SliderPage(
-      title: "Lorem Ipsum",
+      title: "Great Analytics",
       description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quam sed ipsum ornare",
+          "Help investors find investment provider institutions that have obtained operational permits from the Financial Services Authority (OJK)",
+      imageAsset: "assets/img/onboard1.png",
+    ),
+    SliderPage(
+      title: "Security Guarantee",
+      description:
+          "Don't just choose an investment provider, make sure your investment is guaranteed safe with a legal investment provider",
       imageAsset: "assets/img/onboard3.png",
     ),
   ];
