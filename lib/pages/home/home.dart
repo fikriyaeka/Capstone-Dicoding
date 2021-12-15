@@ -4,6 +4,7 @@ import 'package:capstone_dicoding/pages/details/legalscreen.dart';
 import 'package:capstone_dicoding/pages/theme/theme.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -54,7 +55,7 @@ class HomeScreen extends StatelessWidget {
                         },
                         child: Container(
                           width: responsiveWidth(100),
-                          height: responsiveHeight(50),
+                          height: responsiveHeight(60),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
                             color: white,
@@ -66,11 +67,21 @@ class HomeScreen extends StatelessWidget {
                                   spreadRadius: 1.0),
                             ],
                           ),
-                          child: Center(
-                              child: Text(
-                            "LEGAL",
-                            style: Theme.of(context).textTheme.subtitle2,
-                          )),
+                          child: Column(
+                            children: <Widget>[
+                              const Spacer(),
+                              SvgPicture.asset(
+                                "assets/img/svg_legal.svg",
+                                height: responsiveHeight(31),
+                              ),
+                              Text(
+                                "Legal",
+                                textAlign: TextAlign.center,
+                                style: Theme.of(context).textTheme.subtitle2,
+                              ),
+                              const Spacer(),
+                            ],
+                          ),
                         ),
                       ),
                       GestureDetector(
@@ -82,7 +93,7 @@ class HomeScreen extends StatelessWidget {
                         },
                         child: Container(
                           width: responsiveWidth(100),
-                          height: responsiveHeight(50),
+                          height: responsiveHeight(60),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
                             color: white,
@@ -94,11 +105,21 @@ class HomeScreen extends StatelessWidget {
                                   spreadRadius: 1.0),
                             ],
                           ),
-                          child: Center(
-                              child: Text(
-                            "ILEGAL",
-                            style: Theme.of(context).textTheme.subtitle2,
-                          )),
+                          child: Column(
+                            children: <Widget>[
+                              const Spacer(),
+                              SvgPicture.asset(
+                                "assets/img/svg_ilegal.svg",
+                                height: responsiveHeight(32),
+                              ),
+                              Text(
+                                "Ilegal",
+                                textAlign: TextAlign.center,
+                                style: Theme.of(context).textTheme.subtitle2,
+                              ),
+                              const Spacer(),
+                            ],
+                          ),
                         ),
                       ),
                     ],
@@ -107,7 +128,7 @@ class HomeScreen extends StatelessWidget {
               ),
               Container(
                 width: responsiveWidth(380),
-                margin: const EdgeInsets.only(top: 147),
+                margin: const EdgeInsets.only(top: 174),
                 padding: const EdgeInsets.symmetric(horizontal: 26),
                 decoration: BoxDecoration(
                     borderRadius:
