@@ -1,4 +1,5 @@
 import 'package:capstone_dicoding/mediaquery/sizeconfig.dart';
+import 'package:capstone_dicoding/pages/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
@@ -48,7 +49,7 @@ class IlegalScreen extends StatelessWidget {
                 topRight: Radius.circular(24.0),
               ),
               backdropEnabled: true,
-              color: Color(0xFFF8F3FF),
+              color: simpleGrey,
               collapsed: _collapsed(),
               panelBuilder: (ScrollController sc) => _scrollingList(sc),
             )
@@ -118,8 +119,8 @@ class IlegalScreen extends StatelessWidget {
             ),
           ],
         ),
-        baseColor: Colors.black,
-        highlightColor: Colors.white,
+        baseColor: black,
+        highlightColor: white,
       ),
     );
   }

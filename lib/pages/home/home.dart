@@ -151,6 +151,9 @@ class HomeScreen extends StatelessWidget {
                     Institutions(),
                     Institutions(),
                     Institutions(),
+                    const SizedBox(
+                      height: 20,
+                    ),
                     Text(
                       'Show Ilegal Investment Institutions',
                       style: Theme.of(context).textTheme.subtitle2,

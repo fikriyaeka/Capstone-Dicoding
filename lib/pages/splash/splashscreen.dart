@@ -1,4 +1,5 @@
 import 'package:capstone_dicoding/pages/home/home.dart';
+import 'package:capstone_dicoding/pages/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:after_layout/after_layout.dart';
@@ -31,8 +32,8 @@ class _SplashScreenState extends State<SplashScreen>
 
     if (_seen) {
       Timer(Duration(seconds: 4), () {
-        Navigator.of(context)
-          .pushReplacement(MaterialPageRoute(builder: (context) => HomeScreen()));
+        Navigator.of(context).pushReplacement(
+            MaterialPageRoute(builder: (context) => HomeScreen()));
       });
     } else {
       await prefs.setBool('seen', true);
@@ -44,7 +45,7 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFB983FF),
+      backgroundColor: purple,
       key: _scaffoldKey,
       body: Center(
         child: Image.asset("assets/img/logo.png"),

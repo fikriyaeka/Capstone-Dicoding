@@ -2,6 +2,7 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:capstone_dicoding/mediaquery/sizeconfig.dart';
 import 'package:capstone_dicoding/pages/home/home.dart';
 import 'package:capstone_dicoding/pages/onboarding/slider.dart';
+import 'package:capstone_dicoding/pages/theme/theme.dart';
 import 'package:flutter/material.dart';
 
 class OnBoard extends StatefulWidget {
@@ -51,9 +52,9 @@ class _OnBoardState extends State<OnBoard> {
                 animatedTexts: [
                   TypewriterAnimatedText(
                     'INLINE',
-                    textStyle: const TextStyle(
+                    textStyle: TextStyle(
                       fontSize: 32.0,
-                      color: Color(0xFFB983FF),
+                      color: purple,
                       fontWeight: FontWeight.bold,
                     ),
                     speed: const Duration(milliseconds: 1000),
@@ -98,9 +99,7 @@ class _OnBoardState extends State<OnBoard> {
                     ),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(5),
-                      color: (index == _currentPages)
-                          ? Color(0xFFB983FF)
-                          : Color(0xFFC4C4C4),
+                      color: (index == _currentPages) ? purple : grey,
                     ),
                   );
                 }),
@@ -127,13 +126,13 @@ class _OnBoardState extends State<OnBoard> {
                               width: responsiveWidth(200),
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10),
-                                color: Color(0xFFB983FF),
+                                color: purple,
                               ),
                               child: Center(
                                 child: Text(
                                   "Lets Get Started",
                                   style: TextStyle(
-                                    color: Colors.white,
+                                    color: white,
                                     fontSize: 18,
                                   ),
                                 ),
@@ -156,14 +155,14 @@ class _OnBoardState extends State<OnBoard> {
                                   borderRadius: BorderRadius.circular(10),
                                   border: Border.all(
                                     width: 2,
-                                    color: Color(0xFFB983FF),
+                                    color: purple,
                                   )),
                               child: Center(
                                 child: Text(
                                   "Skip",
                                   style: TextStyle(
                                     fontSize: 18,
-                                    color: Color(0xFFB983FF),
+                                    color: purple,
                                   ),
                                 ),
                               ),
@@ -183,13 +182,13 @@ class _OnBoardState extends State<OnBoard> {
                                 width: responsiveWidth(120),
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10),
-                                  color: Color(0xFFB983FF),
+                                  color: purple,
                                 ),
                                 child: Center(
                                   child: Text(
                                     "Next",
                                     style: TextStyle(
-                                      color: Colors.white,
+                                      color: white,
                                       fontSize: 18,
                                     ),
                                   ),
