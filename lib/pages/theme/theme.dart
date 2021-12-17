@@ -77,7 +77,7 @@ var subTitle1 = GoogleFonts.poppins(
 
 var subTitle2 = GoogleFonts.poppins(
   color: grey,
-  fontSize: 14,
+  fontSize: 16,
   fontWeight: FontWeight.w400,
 );
 

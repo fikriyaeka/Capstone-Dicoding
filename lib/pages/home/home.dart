@@ -13,7 +13,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: purple,
       body: SafeArea(child: LayoutBuilder(
-        builder: (BuildContext context, BoxConstraintsconstraints) {
+        builder: (BuildContext context, boxConstraintsconstraints) {
           return Stack(
             children: [
               Column(
@@ -148,6 +148,19 @@ class HomeScreen extends StatelessWidget {
                     const SizedBox(
                       height: 17,
                     ),
+                    Institutions(),
+                    Institutions(),
+                    Institutions(),
+                    Text(
+                      'Show Ilegal Investment Institutions',
+                      style: Theme.of(context).textTheme.subtitle2,
+                    ),
+                    const SizedBox(
+                      height: 17,
+                    ),
+                    Institutions(),
+                    Institutions(),
+                    Institutions(),
                   ],
                 ),
               ),
@@ -155,6 +168,52 @@ class HomeScreen extends StatelessWidget {
           );
         },
       )),
+    );
+  }
+}
+
+class Institutions extends StatelessWidget {
+  const Institutions({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.only(
+        bottom: responsiveHeight(10),
+        left: responsiveWidth(25),
+        right: responsiveWidth(25),
+      ),
+      height: responsiveHeight(60),
+      width: responsiveWidth(325),
+      decoration: BoxDecoration(
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.25),
+            blurRadius: 5,
+            offset: Offset(0, 2),
+          ),
+        ],
+        color: Colors.white,
+        shape: BoxShape.rectangle,
+        borderRadius: BorderRadius.circular(7),
+      ),
+      child: Padding(
+        padding: EdgeInsets.only(
+          left: responsiveWidth(15),
+          top: responsiveWidth(11),
+          bottom: responsiveWidth(11),
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Text("PT Lorem Ipsum"),
+            Text("Lorem Ipsum"),
+          ],
+        ),
+      ),
     );
   }
 }
