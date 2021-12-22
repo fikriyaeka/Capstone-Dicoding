@@ -1,10 +1,26 @@
+import 'package:capstone_dicoding/backend/api_illegals.dart';
 import 'package:capstone_dicoding/mediaquery/sizeconfig.dart';
+import 'package:capstone_dicoding/model/model_illegal.dart';
 import 'package:capstone_dicoding/pages/theme/theme.dart';
+import 'package:capstone_dicoding/pages/widget/cardillegal.dart';
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 
-class IlegalScreen extends StatelessWidget {
+class IlegalScreen extends StatefulWidget {
+  @override
+  _IlegalScreenState createState() => _IlegalScreenState();
+}
+
+class _IlegalScreenState extends State<IlegalScreen> {
+  Future<List<ModelDataIllegal>> _illegal;
+
+  @override
+  void initState() {
+    _illegal = IllegalRepository().getIllegal();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
@@ -60,49 +76,33 @@ class IlegalScreen extends StatelessWidget {
   }
 
   Widget _scrollingList(ScrollController sc) {
-    return ListView.builder(
-      padding: EdgeInsets.only(
-        top: responsiveHeight(75),
-      ),
-      controller: sc,
-      itemCount: 50,
-      itemBuilder: (BuildContext context, int i) {
-        return Container(
-          margin: EdgeInsets.only(
-            bottom: responsiveHeight(10),
-            left: responsiveWidth(25),
-            right: responsiveWidth(25),
-          ),
-          height: responsiveHeight(60),
-          width: responsiveWidth(325),
-          decoration: BoxDecoration(
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withOpacity(0.25),
-                blurRadius: 5,
-                offset: Offset(0, 2),
+    return FutureBuilder(
+      future: _illegal,
+      builder: (context, AsyncSnapshot<List<ModelDataIllegal>> snapshot) {
+        var state = snapshot.connectionState;
+        if (state != ConnectionState.done) {
+          return Center(child: CircularProgressIndicator());
+        } else {
+          if (snapshot.hasData) {
+            return ListView.builder(
+              padding: EdgeInsets.only(
+                top: responsiveHeight(75),
               ),
-            ],
-            color: Colors.white,
-            shape: BoxShape.rectangle,
-            borderRadius: BorderRadius.circular(7),
-          ),
-          child: Padding(
-            padding: EdgeInsets.only(
-              left: responsiveWidth(15),
-              top: responsiveWidth(11),
-              bottom: responsiveWidth(11),
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Text("PT Lorem Ipsum"),
-                Text("Lorem Ipsum"),
-              ],
-            ),
-          ),
-        );
+              controller: sc,
+              itemCount: snapshot.data?.length,
+              itemBuilder: (context, index) {
+                var legal = snapshot.data[index];
+                return CardIllegal(
+                  illegal: legal,
+                );
+              },
+            );
+          } else if (snapshot.hasError) {
+            return Center(child: Text(snapshot.error.toString()));
+          } else {
+            return Text('');
+          }
+        }
       },
     );
   }

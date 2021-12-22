@@ -1,10 +1,26 @@
+import 'package:capstone_dicoding/backend/api_legal.dart';
 import 'package:capstone_dicoding/mediaquery/sizeconfig.dart';
+import 'package:capstone_dicoding/model/model_legal.dart';
 import 'package:capstone_dicoding/pages/theme/theme.dart';
+import 'package:capstone_dicoding/pages/widget/cardlegal.dart';
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 
-class LegalScreen extends StatelessWidget {
+class LegalScreen extends StatefulWidget {
+  @override
+  _LegalScreenState createState() => _LegalScreenState();
+}
+
+class _LegalScreenState extends State<LegalScreen> {
+  Future<List<ModelDataLegal>> _legal;
+
+  @override
+  void initState() {
+    _legal = LegalRepository().getLegal();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
@@ -60,49 +76,33 @@ class LegalScreen extends StatelessWidget {
   }
 
   Widget _scrollingList(ScrollController sc) {
-    return ListView.builder(
-      padding: EdgeInsets.only(
-        top: responsiveHeight(75),
-      ),
-      controller: sc,
-      itemCount: 50,
-      itemBuilder: (BuildContext context, int i) {
-        return Container(
-          margin: EdgeInsets.only(
-            bottom: responsiveHeight(10),
-            left: responsiveWidth(25),
-            right: responsiveWidth(25),
-          ),
-          height: responsiveHeight(60),
-          width: responsiveWidth(325),
-          decoration: BoxDecoration(
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withOpacity(0.25),
-                blurRadius: 5,
-                offset: Offset(0, 2),
+    return FutureBuilder(
+      future: _legal,
+      builder: (context, AsyncSnapshot<List<ModelDataLegal>> snapshot) {
+        var state = snapshot.connectionState;
+        if (state != ConnectionState.done) {
+          return Center(child: CircularProgressIndicator());
+        } else {
+          if (snapshot.hasData) {
+            return ListView.builder(
+              padding: EdgeInsets.only(
+                top: responsiveHeight(75),
               ),
-            ],
-            color: Colors.white,
-            shape: BoxShape.rectangle,
-            borderRadius: BorderRadius.circular(7),
-          ),
-          child: Padding(
-            padding: EdgeInsets.only(
-              left: responsiveWidth(15),
-              top: responsiveWidth(11),
-              bottom: responsiveWidth(11),
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Text("PT Lorem Ipsum"),
-                Text("Lorem Ipsum"),
-              ],
-            ),
-          ),
-        );
+              controller: sc,
+              itemCount: snapshot.data?.length,
+              itemBuilder: (context, index) {
+                var legal = snapshot.data[index];
+                return CardLegal(
+                  legal: legal,
+                );
+              },
+            );
+          } else if (snapshot.hasError) {
+            return Center(child: Text(snapshot.error.toString()));
+          } else {
+            return Text('');
+          }
+        }
       },
     );
   }
