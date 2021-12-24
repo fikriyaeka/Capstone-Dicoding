@@ -34,8 +34,8 @@ class CardLegal extends StatelessWidget {
           padding: EdgeInsets.only(
             left: responsiveWidth(15),
             right: responsiveWidth(15),
-            top: responsiveWidth(11),
-            bottom: responsiveWidth(11),
+            top: responsiveWidth(10),
+            bottom: responsiveWidth(10),
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -48,8 +48,14 @@ class CardLegal extends StatelessWidget {
                     Text(
                       legal.pt,
                       maxLines: 1,
+                      style: TextStyle(fontSize: 16, color: Colors.black),
                     ),
-                    Text(legal.nama),
+                    Text(
+                      legal.nama,
+                      style: TextStyle(
+                        color: Colors.black.withOpacity(0.75),
+                      ),
+                    ),
                   ],
                 ),
               ),
