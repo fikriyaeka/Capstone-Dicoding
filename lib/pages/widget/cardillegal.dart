@@ -30,6 +30,7 @@ class CardIllegal extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.only(
           left: responsiveWidth(15),
+          right: responsiveWidth(15),
           top: responsiveWidth(10),
           bottom: responsiveWidth(10),
         ),
@@ -44,6 +45,7 @@ class CardIllegal extends StatelessWidget {
             ),
             Text(
               illegal.type,
+              maxLines: 1,
               style: TextStyle(
                 color: Colors.black.withOpacity(0.75),
               ),
