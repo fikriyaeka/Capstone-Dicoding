@@ -55,8 +55,13 @@ Terdapat beberapa panduan untuk memudahkan pengguna dalam menggunakan aplikasi b
 
 
 <img src="https://media.giphy.com/media/iY8CRBdQXODJSCERIr/giphy.gif" width="40px">***RESOURCE***<br>
-<!-- 📌 API
-https://ojk-invest-api.vercel.app/ -->
+
+  
+- [API PUBLIC](https://ojk-invest-api.vercel.app/)📊
+
+
+- [LINK REFERENECES](https://www.bareksa.com/berita/pasar-modal/2021-10-28/bei-minat-investasi-terus-meningkat-jumlah-investor-pasar-modal-bisa-naik-30-persen-di-2022)📕
+
 <p align="left"> 
   <a href="#">
     <img alt="DART" src="https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white"/>
@@ -82,6 +87,7 @@ https://ojk-invest-api.vercel.app/ -->
     <img alt="GitHub Pages" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white">
   </a>
 </p>
+
 
 
 <div align="center">
