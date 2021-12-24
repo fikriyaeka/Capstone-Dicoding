@@ -12,8 +12,6 @@ class CardIllegal extends StatelessWidget {
     return Container(
           margin: EdgeInsets.only(
             bottom: responsiveHeight(10),
-            left: responsiveWidth(25),
-            right: responsiveWidth(25),
           ),
           height: responsiveHeight(60),
           width: responsiveWidth(325),

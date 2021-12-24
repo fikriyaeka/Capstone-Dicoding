@@ -9,6 +9,7 @@ import 'package:capstone_dicoding/pages/theme/theme.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:capstone_dicoding/pages/widget/cardillegal.dart';
 import 'package:capstone_dicoding/pages/widget/cardlegal.dart';
+import 'package:capstone_dicoding/pages/widget/cardloadinghome.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -86,9 +87,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     SizedBox(
                       height: responsiveHeight(10),
                     ),
-                    Institutions(),
-                    Institutions(),
-                    Institutions(),
+                    _cardLegal(0),
+                    _cardLegal(2),
+                    _cardLegal(3),
                     SizedBox(
                       height: responsiveHeight(25),
                     ),
@@ -99,9 +100,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     SizedBox(
                       height: responsiveHeight(10),
                     ),
-                    Institutions(),
-                    Institutions(),
-                    Institutions(),
+                    _cardIllegal(0),
+                    _cardIllegal(1),
+                    _cardIllegal(2),
                   ],
                 ),
               ),
@@ -207,103 +208,49 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-//   Widget _cardLegal() {
-//     return FutureBuilder(
-//       future: _legal,
-//       builder: (context, AsyncSnapshot<List<ModelDataLegal>> snapshot) {
-//         var state = snapshot.connectionState;
-//         if (state != ConnectionState.done) {
-//           return Center(child: CircularProgressIndicator());
-//         } else {
-//           if (snapshot.hasData) {
-//             return ListView.builder(
-//               itemCount: 3,
-//               itemBuilder: (context, index) {
-//                 var legal = snapshot.data[1];
-//                 return CardLegal(
-//                   legal: legal,
-//                 );
-//               },
-//             );
-//           } else if (snapshot.hasError) {
-//             return Center(child: Text(snapshot.error.toString()));
-//           } else {
-//             return Text('');
-//           }
-//         }
-//       },
-//     );
-//   }
+  Widget _cardLegal(int angka) {
+    return FutureBuilder(
+      future: _legal,
+      builder: (context, AsyncSnapshot<List<ModelDataLegal>> snapshot) {
+        var state = snapshot.connectionState;
+        if (state != ConnectionState.done) {
+          return CardLoadingHome();
+        } else {
+          if (snapshot.hasData) {
+            var legal = snapshot.data[angka];
+            return CardLegal(
+              legal: legal,
+            );
+          } else if (snapshot.hasError) {
+            return Center(child: Text(snapshot.error.toString()));
+          } else {
+            return Text('');
+          }
+        }
+      },
+    );
+  }
 
-//   Widget _cardIllegal() {
-//     return FutureBuilder(
-//       future: _illegal,
-//       builder: (context, AsyncSnapshot<List<ModelDataIllegal>> snapshot) {
-//         var state = snapshot.connectionState;
-//         if (state != ConnectionState.done) {
-//           return Center(child: CircularProgressIndicator());
-//         } else {
-//           if (snapshot.hasData) {
-//             return ListView.builder(
-//               itemCount: 3,
-//               itemBuilder: (context, index) {
-//                 var illegal = snapshot.data[1];
-//                 return CardIllegal(
-//                   illegal: illegal,
-//                 );
-//               },
-//             );
-//           } else if (snapshot.hasError) {
-//             return Center(child: Text(snapshot.error.toString()));
-//           } else {
-//             return Text('');
-//           }
-//         }
-//       },
-//     );
-//   }
-}
-
-class Institutions extends StatelessWidget {
-  const Institutions({
-    Key key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.only(
-        bottom: responsiveHeight(10),
-      ),
-      height: responsiveHeight(60),
-      width: responsiveWidth(325),
-      decoration: BoxDecoration(
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.25),
-            blurRadius: 5,
-            offset: Offset(0, 2),
-          ),
-        ],
-        color: Colors.white,
-        shape: BoxShape.rectangle,
-        borderRadius: BorderRadius.circular(7),
-      ),
-      child: Padding(
-        padding: EdgeInsets.only(
-          left: responsiveWidth(15),
-          top: responsiveWidth(11),
-          bottom: responsiveWidth(11),
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Text("PT Lorem Ipsum"),
-            Text("Lorem Ipsum"),
-          ],
-        ),
-      ),
+  Widget _cardIllegal(int angka) {
+    return FutureBuilder(
+      future: _illegal,
+      builder: (context, AsyncSnapshot<List<ModelDataIllegal>> snapshot) {
+        var state = snapshot.connectionState;
+        if (state != ConnectionState.done) {
+          return CardLoadingHome();
+        } else {
+          if (snapshot.hasData) {
+            var illegal = snapshot.data[angka];
+            return CardIllegal(
+              illegal: illegal,
+            );
+          } else if (snapshot.hasError) {
+            return Center(child: Text(snapshot.error.toString()));
+          } else {
+            return Text('');
+          }
+        }
+      },
     );
   }
 }

@@ -3,6 +3,7 @@ import 'package:capstone_dicoding/mediaquery/sizeconfig.dart';
 import 'package:capstone_dicoding/model/model_illegal.dart';
 import 'package:capstone_dicoding/pages/theme/theme.dart';
 import 'package:capstone_dicoding/pages/widget/cardillegal.dart';
+import 'package:capstone_dicoding/pages/widget/cardloading.dart';
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
@@ -81,7 +82,7 @@ class _IlegalScreenState extends State<IlegalScreen> {
       builder: (context, AsyncSnapshot<List<ModelDataIllegal>> snapshot) {
         var state = snapshot.connectionState;
         if (state != ConnectionState.done) {
-          return Center(child: CircularProgressIndicator());
+          return CardLoading();
         } else {
           if (snapshot.hasData) {
             return ListView.builder(
@@ -92,8 +93,11 @@ class _IlegalScreenState extends State<IlegalScreen> {
               itemCount: snapshot.data?.length,
               itemBuilder: (context, index) {
                 var legal = snapshot.data[index];
-                return CardIllegal(
-                  illegal: legal,
+                return Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25),
+                  child: CardIllegal(
+                    illegal: legal,
+                  ),
                 );
               },
             );
