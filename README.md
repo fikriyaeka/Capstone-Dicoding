@@ -19,11 +19,9 @@ INLINE - Aplikasi Informasi Perizinan Lembaga Investasi Oleh Otoritas Jasa Keuan
 Fitur yang kami tawarkan berupa : <br>
 ✔ Menampilkan sejumlah lembaga investasi yang sudah diklasifikasikan berdasarkan ***legal & illegal***<br>
 ✔ List Lembaga investasi yang kita tampilkan dapat mengarah ke *website* resmi Lembaga tersebut<br>
-✔	Menampilkan 3 lembaga terbaru pada menu *homescreen*<br>
-✔	Terdapat fitur *searching* untuk memudahkan pencarian lembaga<br>
+✔	Menampilkan 3 contoh lembaga pada menu *homescreen*<br>
 ✔ Terdapat daftar lembaga investasi yang dapat mengarah ke *website* resmi lembaga tersebut<br>
-✔ Tampilan UI yang menarik serta penggunaan yang mudah <br>
-✔ Terdapat panduan penggunaan aplikasi<br><br>
+✔ Tampilan UI yang menarik serta penggunaan yang mudah <br><br>
 
 <img src="https://media.giphy.com/media/iY8CRBdQXODJSCERIr/giphy.gif" width="40px">***PENGGUNAAN APLIKASI***<br>
 
