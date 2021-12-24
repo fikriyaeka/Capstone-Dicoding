@@ -99,7 +99,7 @@ Terdapat beberapa panduan untuk memudahkan pengguna dalam menggunakan aplikasi b
 ------
 
 **GROUP CSD-070**
-- 👨‍💼 Muslimin Dita Heriyanto - P120R5081
+- 👨‍💼 Muslimin Dita Herianto - P120R5081
 - 👩‍💼 Fikriya Eka Wahyuni - P227V4185
 
 
