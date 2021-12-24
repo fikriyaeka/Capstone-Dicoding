@@ -60,7 +60,7 @@ Terdapat beberapa panduan untuk memudahkan pengguna dalam menggunakan aplikasi b
 - [API PUBLIC](https://ojk-invest-api.vercel.app/)📊
 
 
-- [LINK REFERENCES](https://www.bareksa.com/berita/pasar-modal/2021-10-28/bei-minat-investasi-terus-meningkat-jumlah-investor-pasar-modal-bisa-naik-30-persen-di-2022)📕
+- [LINK REFERENECES](https://www.bareksa.com/berita/pasar-modal/2021-10-28/bei-minat-investasi-terus-meningkat-jumlah-investor-pasar-modal-bisa-naik-30-persen-di-2022)📕
 
 <p align="left"> 
   <a href="#">
