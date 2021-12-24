@@ -52,7 +52,6 @@ class CardLegal extends StatelessWidget {
                     ),
                     Text(
                       legal.nama,
-                      maxLines: 1,
                       style: TextStyle(
                         color: Colors.black.withOpacity(0.75),
                       ),

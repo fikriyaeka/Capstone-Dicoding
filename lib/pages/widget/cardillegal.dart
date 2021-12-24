@@ -45,7 +45,6 @@ class CardIllegal extends StatelessWidget {
             ),
             Text(
               illegal.type,
-              maxLines: 1,
               style: TextStyle(
                 color: Colors.black.withOpacity(0.75),
               ),
