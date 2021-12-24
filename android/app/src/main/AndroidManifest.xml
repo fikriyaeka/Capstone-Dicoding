@@ -2,7 +2,7 @@
     package="com.example.capstone_dicoding">
     <uses-permission android:name="android.permission.INTERNET" />
    <application
-        android:label="capstone_dicoding"
+        android:label="INLINE"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
