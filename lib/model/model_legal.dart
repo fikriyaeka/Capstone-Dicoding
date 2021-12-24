@@ -7,15 +7,18 @@ String userModelToJson(ModelDataLegal data) => json.encode(data.toJson());
 class ModelDataLegal {
   String pt; 
   String nama;
-  ModelDataLegal({this.pt, this.nama});
+  String link;
+  ModelDataLegal({this.pt, this.nama, this.link});
 
   factory ModelDataLegal.fromJson(Map<String, dynamic> json) => ModelDataLegal(
         pt: json['owner'],
         nama: json['name'],
+        link: json['url']
       );
 
   Map<String, dynamic> toJson() => {
         'owner': pt,
         'name': nama,
+        'url': link
       };
 }
